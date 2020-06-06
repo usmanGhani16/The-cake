@@ -1,0 +1,152 @@
+// colors
+$font_family: Arial,
+Helvetica,
+sans-serif;
+$font_family2: 'Pacifico',
+cursive;
+$white : #ffffff;
+$hoverIcon: #ff599a;
+
+// Resets 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: $font_family;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 1;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+
+
+
+//  STYLES // 
+header {
+    background-color: $white;
+
+    .navbar {
+        .container {
+            border-bottom: 1px solid #e4e4e4;
+
+            .upper-nav {
+                width: 95%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                padding-top: 16px;
+
+                .logo-con {
+                    .logo {
+                        width: 123px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+
+            .icons {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 5%;
+
+                .auth,
+                .bucket {
+                    a {
+                        cursor: pointer;
+
+                        svg {
+                            font-size: 1.7rem;
+                            color: #000;
+                            transition: all ease-out 0.25s;
+                        }
+                    }
+                }
+
+                .auth {
+                    &:hover {
+                        svg {
+                            color: $hoverIcon;
+                        }
+                    }
+                }
+
+                .bucket {
+                    position: relative;
+
+                    .badge {
+                        cursor: pointer;
+                        position: absolute;
+                        top: -9px;
+                        transform: translateX(75%);
+                        background-color: #000;
+                        transition: all ease-out 0.25s;
+                        color: $white;
+                        border-radius: 100%;
+                        width: 20px;
+                        height: 20px;
+                        text-align: center;
+
+                        span {
+                            font-size: 12px;
+                        }
+                    }
+
+                    .buckit-items {
+                        position: absolute;
+                        display: none;
+                    }
+
+                    &:hover {
+                        svg {
+                            color: $hoverIcon;
+                        }
+
+                        .badge {
+                            color: $white;
+                            background-color: $hoverIcon;
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+}
