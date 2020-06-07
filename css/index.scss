@@ -1,11 +1,12 @@
 // colors
-$font_family: Arial,
-Helvetica,
+$font_family: 'Roboto',
 sans-serif;
 $font_family2: 'Pacifico',
 cursive;
 $white : #ffffff;
 $hoverIcon: #ff599a;
+$boxShadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+$trans: all ease-out 0.25s;
 
 // Resets 
 * {
@@ -51,12 +52,15 @@ a {
     letter-spacing: 0.5px;
 }
 
-
+.box {
+    padding: 12px 16px;
+}
 
 //  STYLES // 
 header {
     background-color: $white;
 
+    // navbar ..
     .navbar {
         .container {
             border-bottom: 1px solid #e4e4e4;
@@ -68,85 +72,503 @@ header {
                 justify-content: space-between;
                 padding-top: 16px;
 
+
+                .links {
+                    display: flex;
+                    align-items: center;
+                    width: 33%;
+                    order: 1;
+
+                    .nav-ul {
+                        width: 100%;
+                        display: flex;
+
+                        .nav-item {
+                            padding: 5px 10px;
+
+                            .nav-link {
+                                font-weight: 600;
+                                font-size: 15px;
+                                transition: $trans;
+                            }
+
+                            .link-active {
+                                color: $hoverIcon;
+                            }
+
+                            &:hover {
+                                .nav-link {
+                                    color: $hoverIcon;
+                                }
+                            }
+                        }
+                    }
+                }
+
                 .logo-con {
+                    background-color: $white;
+                    width: 33%;
+                    display: flex;
+                    justify-content: center;
+                    order: 2;
+                    z-index: 9999;
+
                     .logo {
-                        width: 123px;
+                        width: 150px;
+                        background-color: $white;
+                        border: 3px solid $hoverIcon;
+                        border-radius: 100%;
+                        padding: 5px;
+                        margin-bottom: -4rem;
+                        transition: $trans;
+                        transform: scale(0.95);
 
                         img {
+                            border-radius: 100%;
                             width: 100%;
                             height: 100%;
                         }
-                    }
-                }
-            }
 
-            .icons {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 5%;
-
-                .auth,
-                .bucket {
-                    a {
-                        cursor: pointer;
-
-                        svg {
-                            font-size: 1.7rem;
-                            color: #000;
-                            transition: all ease-out 0.25s;
+                        &:hover {
+                            border: 3px solid $hoverIcon;
+                            transform: scale(1);
+                            transform: translateY(-0.5rem);
+                            box-shadow: $boxShadow !important;
                         }
                     }
                 }
 
-                .auth {
-                    &:hover {
-                        svg {
-                            color: $hoverIcon;
-                        }
-                    }
-                }
+                .icons {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    width: 33%;
+                    order: 3;
 
-                .bucket {
-                    position: relative;
+                    .auth,
+                    .bucket {
+                        a {
+                            cursor: pointer;
 
-                    .badge {
-                        cursor: pointer;
-                        position: absolute;
-                        top: -9px;
-                        transform: translateX(75%);
-                        background-color: #000;
-                        transition: all ease-out 0.25s;
-                        color: $white;
-                        border-radius: 100%;
-                        width: 20px;
-                        height: 20px;
-                        text-align: center;
-
-                        span {
-                            font-size: 12px;
+                            svg {
+                                font-size: 1.7rem;
+                                color: #000;
+                                transition: all ease-out 0.25s;
+                            }
                         }
                     }
 
-                    .buckit-items {
-                        position: absolute;
-                        display: none;
+                    .auth {
+                        transform: translateX(-50%);
+
+                        svg {
+                            height: 40px;
+                        }
+
+                        &:hover {
+                            svg {
+                                color: $hoverIcon;
+                            }
+                        }
                     }
 
-                    &:hover {
+                    .bucket {
+                        position: relative;
+
                         svg {
-                            color: $hoverIcon;
+                            height: 40px;
                         }
 
                         .badge {
+                            cursor: pointer;
+                            position: absolute;
+                            top: -5px;
+                            transform: translateX(75%);
+                            background-color: #000;
+                            transition: all ease-out 0.25s;
                             color: $white;
-                            background-color: $hoverIcon;
+                            border-radius: 100%;
+                            width: 20px;
+                            height: 20px;
+                            text-align: center;
+
+                            span {
+                                font-size: 12px;
+                            }
+                        }
+
+                        .bucket-dropdown {
+                            position: absolute;
+                            left: -324px;
+                            top: 40px;
+                            width: 350px;
+                            z-index: 9999999;
+                            display: none;
+
+                            .buckit-items {
+                                transition: $trans;
+                                box-shadow: 0px 0px 30px 0 rgba(0, 0, 0, 0.15);
+                                background-color: $white;
+                                text-align: center;
+
+
+
+                                .no-cart-itmes {
+                                    padding: 15px 25px;
+                                    display: inline-block;
+                                }
+
+                                .buckit-items-list {
+                                    max-height: 300px;
+                                    overflow-y: scroll;
+
+                                    &::-webkit-scrollbar {
+                                        width: 7px;
+                                    }
+
+                                    &::-webkit-scrollbar-track {
+                                        background-color: $white;
+                                        border-radius: 10px;
+                                    }
+
+                                    &::-webkit-scrollbar-thumb {
+                                        border-radius: 10px;
+                                        background: linear-gradient(90deg, #ee7560, #ff5858);
+                                    }
+
+                                    .list-item {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        border-bottom: 1px solid #f3f3f3;
+                                        margin-bottom: 15px;
+                                        padding: 15px 25px;
+
+                                        .item-img {
+                                            width: 70px;
+
+                                            img {
+                                                width: 100%;
+                                                height: 100%;
+                                            }
+                                        }
+
+                                        .item-name {
+                                            a {
+                                                p {
+                                                    span {
+                                                        line-height: 2;
+                                                    }
+
+                                                    transition: $trans;
+                                                }
+
+                                                &:hover {
+                                                    p {
+                                                        color: $hoverIcon;
+                                                    }
+                                                }
+                                            }
+
+                                        }
+
+                                        .item-dlt {
+                                            a {
+                                                display: flex;
+
+                                                .fa-times-circle {
+                                                    height: 100%;
+                                                    font-size: 20px;
+                                                }
+
+                                                &:hover {
+                                                    .fa-times-circle {
+                                                        color: $hoverIcon;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // footer buckit
+                                .cart-footer {
+
+                                    .sub-total {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        padding: 1rem 1.5rem;
+
+                                        .sub-total-text,
+                                        .amount-text {
+                                            font-size: 13px;
+                                            color: #5e6977;
+                                        }
+                                    }
+
+                                    .view-bag {
+                                        text-align: center;
+                                        transition: $trans;
+
+                                        a {
+                                            color: $white;
+                                            padding: 1.4rem 1rem;
+                                            width: 100%;
+                                            height: 100%;
+                                            display: inline-block;
+                                            background-image: linear-gradient(90deg, #ee7560, #ff5858);
+                                            transition: $trans;
+                                        }
+
+                                        &:hover {
+                                            box-shadow: 0 6px 15px 0 rgba(36, 36, 38, 0.15);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &:hover {
+
+                            .fa-shopping-bag,
+                            .fa-user {
+                                color: $hoverIcon;
+                            }
+
+                            .badge {
+                                color: $white;
+                                background-color: $hoverIcon;
+                            }
+
+                            .bucket-dropdown {
+                                display: block;
+                                animation: in_out linear .4s alternate;
+                            }
+                        }
+
+
+                    }
+                }
+            }
+        }
+    }
+
+    // caroulse
+    .swiper-container {
+        width: 100%;
+        // height: 600px;
+
+        .swiper-wrapper {
+            height: 100%;
+
+            .swiper-slide {
+                position: relative;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                .slider-heading-left,
+                .slider-heading-right {
+                    text-align: center;
+                    line-height: 1.4;
+
+                    h5 {
+                        display: inline-block;
+                        font-size: 42px;
+                        color: #ffffff;
+                    }
+
+                    h2 {
+                        font-size: 45px;
+                        color: #ff9662;
+                    }
+
+                    h4 {
+                        font-size: 40px;
+                        color: #e0d300;
+                        font-weight: 400;
+
+                        span {
+                            font-size: 60px;
+                        }
+                    }
+
+                    a {
+                        background: #ffffff;
+                        color: #e76524;
+                        cursor: pointer;
+                        border-radius: 30px;
+                        line-height: 1.7;
+                        font-weight: bold;
+                        letter-spacing: 2px;
+                        border: none;
+                        transition: all 0.4s ease-in-out;
+                        outline: none;
+                        font-size: 18px;
+                        padding: 8px 20px;
+                        display: inline-block;
+
+                        &:hover {
+                            color: #ffffff;
+                            background-color: #e76524;
                         }
                     }
                 }
 
+                .slider-heading-left {
+                    position: absolute;
+                    top: 0;
+                    top: 50%;
+                    left: 25%;
+                    transform: translate(-50%, -50%);
+                }
+
+                .slider-heading-right {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
 
             }
+
         }
+
+        // controlers
+        .swiper-button-prev,
+        .swiper-button-next {
+            background: none;
+            width: 50px;
+            display: none;
+
+            svg {
+                color: $hoverIcon;
+                width: 100%;
+                font-size: 3rem;
+            }
+        }
+
+        .swiper-button-next {
+            right: 50px;
+        }
+
+        .swiper-button-prev {
+            left: 50px;
+        }
+
+        &:hover {
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                display: block;
+                animation: in_out linear .4s alternate;
+            }
+        }
+    }
+}
+
+
+// Best selling Products ...
+
+.Best-Selling-Products {
+    .heading {
+        text-align: center;
+
+        h5 {
+            font-size: 25px;
+            font-family: Great Vibes;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            color: $hoverIcon;
+            font-family: $font_family2;
+            font-size: 40px;
+        }
+    }
+
+    // card
+    .product-container {
+        display: flex;
+
+        .card {
+            position: relative;
+
+            .card-top {
+                width: 300px;
+                margin: 0 auto;
+                overflow: hidden;
+                position: relative;
+
+                .display-img {
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                }
+
+                span {
+                    display: none;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        cursor: pointer;
+                    }
+                }
+
+                &:hover {
+                    span {
+                        display: block;
+                        animation: slide_left 0.5s alternate;
+                    }
+
+                    .display-img {
+                        display: none;
+                        animation: slide_right 0.5s alternate;
+                    }
+
+                }
+            }
+
+            .card-body {}
+        }
+
+    }
+}
+
+// keyframs 
+@keyframes in_out {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes slide_left {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slide_right {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(100%);
     }
 }

@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <!-- Links -->
     <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css//swiper.min.css">
     <link rel="stylesheet" href="./css/index.css" />
 </head>
 
@@ -19,6 +20,19 @@
         <nav class="navbar">
             <div class="container">
                 <div class="upper-nav">
+                    <!-- left links -->
+                    <div class="links">
+                        <ul class="nav-ul">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="aboutus.html">About us</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- logo -->
                     <div class="logo-con">
                         <div class="logo">
                             <a href="index.html">
@@ -27,9 +41,10 @@
                         </div>
                     </div>
 
+                    <!-- icons -->
                     <div class="icons">
                         <div class="auth">
-                            <a href="#">
+                            <a href="auth.html">
                                 <span>
                                     <i class="far fa-user"></i>
                                 </span>
@@ -46,20 +61,199 @@
                                 <span>0</span>
                             </div>
 
-                            <div class="buckit-items">
-                                <span>no items</span>
+                            <!-- Buckit -->
+                            <div class="bucket-dropdown">
+                                <div class="buckit-items">
+                                    <!-- IF no item availabale in the cart  -->
+                                    <!-- <span class="no-cart-itmes">Your cart is currently empty.</span> -->
+
+                                    <!-- List items -->
+                                    <ul class="buckit-items-list">
+
+                                        <li class="list-item">
+                                            <div class="item-img">
+                                                <a href="#">
+                                                    <img src="./assets/BestCakes/Free_Sample_By_Wix.jpg" alt="">
+                                                </a>
+                                            </div>
+
+                                            <div class="item-name">
+                                                <a href="#">
+                                                    <p>Celebration Cake</p>
+                                                    <p>
+                                                        <span class="color">Black</span> /
+                                                        <span class="flavor">Blueberry</span>
+                                                    </p>
+                                                </a>
+                                            </div>
+
+                                            <div class="item-dlt">
+                                                <a href="#">
+                                                    <i class="far fa-times-circle"></i>
+                                                </a>
+                                            </div>
+                                        </li>
+
+                                        <li class="list-item">
+                                            <div class="item-img">
+                                                <a href="#">
+                                                    <img src="./assets/BestCakes/img-1_116fde62-b312-40b1-b08e-ff50c5cea562.jpg"
+                                                        alt="">
+                                                </a>
+                                            </div>
+
+                                            <div class="item-name">
+                                                <a href="#">
+                                                    <p>Celebration Cake</p>
+                                                    <p>
+                                                        <span class="color">Black</span> /
+                                                        <span class="flavor">Blueberry</span>
+                                                    </p>
+                                                </a>
+                                            </div>
+
+                                            <div class="item-dlt">
+                                                <a href="#">
+                                                    <i class="far fa-times-circle"></i>
+                                                </a>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+
+                                    <div class="cart-footer">
+                                        <div class="sub-total">
+                                            <p class="sub-total-text">
+                                                Subtotal
+                                            </p>
+                                            <p class="amount-text">
+                                                $36.00
+                                            </p>
+                                        </div>
+                                        <div class="view-bag">
+                                            <a href="#">
+                                                VIEW BAG
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
+
                         </div>
                     </div>
                 </div>
-
-                <div class="lower-nav">
-
-                </div>
             </div>
         </nav>
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img src="./assets/caroulses/cake-1_2000x.jpg" alt="Slide 1">
+                    <div class="slider-heading-right">
+                        <h5>
+                            Fresh Cakes 1
+                        </h5>
+                        <h2>
+                            EXCLUSIVE OFFERS
+                        </h2>
+                        <h4>
+                            <span>50</span>% OFF
+                        </h4>
+                        <a href="#">
+                            Shop Now
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./assets/caroulses/cake-2_2000x.jpg" alt="Slide 2">
+                    <div class="slider-heading-left">
+                        <h5>
+                            Fresh Cakes 1
+                        </h5>
+                        <h2>
+                            EXCLUSIVE OFFERS
+                        </h2>
+                        <h4>
+                            <span>50</span>% OFF
+                        </h4>
+                        <a href="#">
+                            Shop Now
+                        </a>
+                    </div>
+                </div>
 
+                <div class="swiper-slide">
+                    <img src="./assets/caroulses/cake-3_2000x.jpg" alt="Slide 3">
+                    <div class="slider-heading-left">
+                        <h5>
+                            Fresh Cakes 1
+                        </h5>
+                        <h2>
+                            EXCLUSIVE OFFERS
+                        </h2>
+                        <h4>
+                            <span>50</span>% OFF
+                        </h4>
+                        <a href="#">
+                            Shop Now
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev">
+                <i class="far fa-arrow-alt-circle-left"></i>
+            </div>
+            <div class="swiper-button-next">
+                <i class="far fa-arrow-alt-circle-right"></i>
+            </div>
+        </div>
     </header>
+
+    <!-- Best selling Products  -->
+    <section id="bestSellingProducts" class="Best-Selling-Products">
+        <div class="box">
+            <div class="heading">
+                <h5> For Any Party</h5>
+                <h2>Best selling Products</h2>
+            </div>
+
+            <div class="product-container">
+                <div class="card">
+                    <div class="card-top">
+                        <span class="on-hover">
+                            <img src="./assets//BestCakes/product32_grande.jpg" alt="">
+                        </span>
+                        <img class="display-img" src="./assets/BestCakes/p6_grande.jpg" alt="">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-link">
+                            <a href="#">
+                                Celebration Cake
+                            </a>
+                        </div>
+
+                        <div class="card-price">
+                            <p>
+                                $369.00
+                            </p>
+                        </div>
+
+                        <div class="add-to-cart">
+                            <button class="btn">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- FOOTER -->
@@ -68,6 +262,7 @@
     </footer>
     <!-- Scripts -->
     <script src="./js/all.min.js"></script>
+    <script src="./js//swiper.min.js"></script>
     <script src="./js/index.js"></script>
 </body>
 
