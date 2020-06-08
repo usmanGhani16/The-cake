@@ -495,50 +495,138 @@ header {
     // card
     .product-container {
         display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
 
-        .card {
-            position: relative;
+        &:last-child {
+            justify-content: flex-start;
+        }
 
-            .card-top {
-                width: 300px;
-                margin: 0 auto;
-                overflow: hidden;
+        .col {
+            margin: 10px 16px;
+
+            .card {
+                width: 100%;
                 position: relative;
+                border: 1px solid #f8f8f8;
+                border-radius: 15px 15px;
 
-                .display-img {
-                    width: 100%;
-                    height: 100%;
-                    cursor: pointer;
-                }
+                .card-top {
+                    width: 300px;
+                    margin: 0 auto;
+                    overflow: hidden;
+                    position: relative;
 
-                span {
-                    display: none;
-
-                    img {
+                    .display-img {
                         width: 100%;
                         height: 100%;
                         cursor: pointer;
+                        transform: translateX(0%);
+                    }
+
+                    span {
+                        position: absolute;
+                        transform: translateX(100%);
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            cursor: pointer;
+                        }
+                    }
+
+                    &:hover {
+                        span {
+                            transform: translateX(0);
+                            animation: slide_left 0.5s both;
+                        }
+
+                        .display-img {
+                            transform: translateX(-100%);
+                            animation: slide_right 0.5s both;
+                        }
                     }
                 }
 
-                &:hover {
-                    span {
-                        display: block;
-                        animation: slide_left 0.5s alternate;
+                .card-body {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 20px 10px 10px 10px;
+
+                    .card-link {
+                        a {
+                            color: #000000;
+                            display: inline-block;
+                            width: 100%;
+                            margin: 0px 0 10px;
+                            line-height: normal;
+                            transition: $trans;
+
+                            &:hover {
+                                color: $hoverIcon;
+                            }
+                        }
                     }
 
-                    .display-img {
-                        display: none;
-                        animation: slide_right 0.5s alternate;
+                    .card-price {
+                        margin: 0px 0 22px;
+
+                        p {
+                            font-size: 20px;
+                            line-height: normal;
+                            font-weight: normal;
+                            color: #000000;
+                        }
                     }
 
+                    .add-to-cart {
+                        .btn {
+                            margin-top: 10px;
+                            font-size: 14px;
+                            text-transform: capitalize;
+                            padding: 10px 25px;
+                            opacity: 1;
+                            width: auto;
+                            height: auto;
+                            line-height: 1.7;
+                            position: relative;
+                            top: 0;
+                            transition: $trans;
+                            border-radius: 30px;
+                            border: 2px solid #ffe450;
+                            color: #000;
+                            background-color: #ffffff;
+
+
+                        }
+
+                        &:hover {
+                            .btn {
+                                background-color: $hoverIcon;
+                                color: #ffffff;
+                                border-color: $hoverIcon;
+                            }
+                        }
+                    }
                 }
             }
-
-            .card-body {}
         }
 
+
     }
+}
+
+
+
+// ADD & REMOVE ANIMATION ON HOVER 
+.slide_img_right {
+    animation: slide_right_out 0.5s both;
+}
+
+.slide_img_left {
+    animation: slide_left_out 0.5s both;
 }
 
 // keyframs 
@@ -569,6 +657,27 @@ header {
     }
 
     100% {
+        transform: translateX(-100%);
+    }
+}
+
+// after mouse leave
+@keyframes slide_left_out {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
         transform: translateX(100%);
+    }
+}
+
+@keyframes slide_right_out {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
     }
 }
