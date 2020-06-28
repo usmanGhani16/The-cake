@@ -15,6 +15,33 @@
 </head>
 
 <body>
+    <div class="sidebar">
+        <div class="links">
+            <ul class="nav-ul">
+                <li class="nav-item">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="./assets/Free_Sample_By_Wix.jpg" alt="logo">
+                        </a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutus.html">Contact us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutus.html">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutus.html">Products</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <!-- HEADER -->
     <header id="header">
         <nav class="navbar">
@@ -50,7 +77,7 @@
                     <!-- icons -->
                     <div class="icons">
                         <div class="burger">
-                            <a href="#">
+                            <a href="#" class="sidebar-toggle">
                                 <span>
                                     <i class="fas fa-bars"></i>
                                 </span>
@@ -566,7 +593,7 @@
 
                 </div>
             </div>
-            <div class="form-container">
+            <div class="form-auth">
 
                 <form action="" method="post">
                     <div style="display: none;">

@@ -38,14 +38,17 @@ window.addEventListener('load', () => {
 
     // copy right
     const copyrightYear = document.querySelector('#copyrightYear')
-    const dat = new Date().getFullYear();
+    const date = new Date().getFullYear();
 
-    copyrightYear.textContent = dat
+    copyrightYear.textContent = date
 
+    initArrow(pos = 0);
+    initMap();
+    sideBar();
 })
 
-initArrow(pos = 0);
-initMap();
+
+
 // back to top
 function initArrow(pos) {
     const arrow = document.querySelector('.back-to-top');
@@ -78,4 +81,16 @@ function initMap() {
         position: uluru,
         map: map
     });
+}
+
+// sidebar toggle
+function sideBar() {
+    const toggleBtn = document.querySelector('.sidebar-toggle');
+    const sidebar = document.querySelector('.sidebar');
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', (e) => {
+            sidebar.classList.toggle('is-closed');
+        })
+    }
 }
