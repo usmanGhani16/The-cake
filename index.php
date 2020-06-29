@@ -1,3 +1,12 @@
+<?php
+
+include 'config.php';
+session_start();
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,33 +24,6 @@
 </head>
 
 <body>
-    <div class="sidebar">
-        <div class="links">
-            <ul class="nav-ul">
-                <li class="nav-item">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="./assets/Free_Sample_By_Wix.jpg" alt="logo">
-                        </a>
-                    </div>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="aboutus.html">Contact us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="aboutus.html">About us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="aboutus.html">Products</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
     <!-- HEADER -->
     <header id="header">
         <nav class="navbar">
@@ -62,9 +44,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="aboutus.html">Products</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="aboutus.html">Kuch Bhi</a>
-                            </li>
                         </ul>
                     </div>
 
@@ -77,22 +56,69 @@
                         </div>
                     </div>
 
-                    <!-- icons -->
-                    <div class="icons">
+                 
+
+
+
+                              <!-- After login -->
+
+                           <?php
+                           if(isset($_SESSION['loggedin'])){
+                           ?>
+                        <div class="icons">
                         <div class="burger">
-                            <a href="#" class="sidebar-toggle">
+                            <a href="#">
                                 <span>
                                     <i class="fas fa-bars"></i>
                                 </span>
                             </a>
                         </div>
-                        <div class="auth">
-                            <a href="auth.html">
+                        <div class=" bucket" style="margin-left:5px;">
+                            <a href="#">
                                 <span>
                                     <i class="far fa-user"></i>
+                                    <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b></p>                                                  
                                 </span>
                             </a>
-                        </div>
+                       
+
+                            <!-- Buckit -->
+                            <div class="bucket-dropdown">
+                                <div class="buckit-items">
+                                    <!-- List items -->
+                                    <ul class="buckit-items-list">
+
+                                    <li class="list-item">
+                                            <div class="item-name">
+                                                <a href="#">
+                                                    <p>  <i class="far fa-user"></i>
+                                                  Hi,  <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b></p>                                                  
+                                                </a>
+                                            </div>                                            
+                                        </li>
+
+                                        <li class="list-item">
+                                            <div class="item-name">
+                                                <a href="reset_password.php">
+                                                    <p>Reset Password</p>                                                  
+                                                </a>
+                                            </div>                                            
+                                        </li>
+
+                                        <li class="list-item">                                        
+                                            <div class="item-name">
+                                                <a href="logout.php">
+                                                    <p>Logout</p>                                                  
+                                                </a>
+                                            </div>                                            
+                                        </li>
+
+                                    </ul>                                   
+                                </div>
+                            </div>
+                            </div>
+
+
                         <div class="bucket">
                             <a href="#">
                                 <span>
@@ -185,6 +211,34 @@
 
                         </div>
                     </div>
+                           <?php
+                           }else{
+                            ?>
+                          <div class="icons">
+                          <div class="burger">
+                            <a href="#">
+                                <span>
+                                    <i class="fas fa-bars"></i>
+                                </span>
+                            </a>
+                        </div>
+                          <div class="auth">
+                            <a href="login_form.php">
+                                <span>
+                                    <i class="far fa-user"></i>
+                                    Login
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                           <?php
+                           }
+                           ?>
+                                <!-- End -->
+
+
+                    <!-- icons -->
+                    
                 </div>
             </div>
         </nav>
@@ -266,7 +320,7 @@
                 <h2>Best selling Products</h2>
             </div>
 
-            <div class="product-container">
+            <!-- <div class="product-container">
                 <div class="col">
                     <div class="card">
                         <div class="card-top">
@@ -291,9 +345,7 @@
 
                             <div class="add-to-cart">
                                 <input type="hidden" name="id">
-                                <a href="" class="btn">
-                                    Add To Cart
-                                </a>
+                             
                             </div>
                         </div>
                     </div>
@@ -391,16 +443,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 
     <!-- NEW PRODUCTS  -->
     <section id="NEWPRODUCTS" class="new_products">
         <div class="box">
-            <div class="heading">
+            <!-- <div class="heading">
                 <h3>NEW PRODUCTS</h3>
-            </div>
+            </div> -->
             <div class="tm-table">
                 <div class="line table-cell"></div>
                 <img class="table-cell"
@@ -410,118 +462,47 @@
             </div>
 
             <div class="product-container">
+
+            <?php 
+$sql = 'select * from product';
+
+$result = $link->query($sql);
+
+
+        while ($row = $result->fetch_array()) 
+{
+	?>
+
                 <div class="col">
                     <div class="card">
                         <div class="card-top">
-                            <img src="./assets/BestCakes/p6_grande.jpg" alt="">
+                            <img src="./AdminPanel/<?php echo $row[1] ?>" alt="">
                         </div>
 
                         <div class="card-body">
                             <div class="card-link">
                                 <a href="#">
-                                    Celebration Cake
+                                <?php echo $row[2]; ?>
                                 </a>
                             </div>
 
                             <div class="card-price">
                                 <p>
-                                    $369.00
+                                <?php echo $row[3]; ?>
                                 </p>
                             </div>
-
                             <div class="add-to-cart">
-                                <input type="hidden" name="id">
+                            <input type="hidden" name="id">
                                 <a href="" class="btn">
-                                    Add To Cart
-                                </a>
+                                    Add to cart
+                                </a>                            
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-top">
-                            <img src="./assets/BestCakes/p6_grande.jpg" alt="">
-                        </div>
 
-                        <div class="card-body">
-                            <div class="card-link">
-                                <a href="#">
-                                    Celebration Cake
-                                </a>
-                            </div>
-
-                            <div class="card-price">
-                                <p>
-                                    $369.00
-                                </p>
-                            </div>
-
-                            <div class="add-to-cart">
-                                <input type="hidden" name="id">
-                                <a href="" class="btn">
-                                    Add To Cart
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-top">
-                            <img src="./assets/BestCakes/p6_grande.jpg" alt="">
-                        </div>
-
-                        <div class="card-body">
-                            <div class="card-link">
-                                <a href="#">
-                                    Celebration Cake
-                                </a>
-                            </div>
-
-                            <div class="card-price">
-                                <p>
-                                    $369.00
-                                </p>
-                            </div>
-
-                            <div class="add-to-cart">
-                                <input type="hidden" name="id">
-                                <a href="" class="btn">
-                                    Add To Cart
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-top">
-                            <img src="./assets/BestCakes/p6_grande.jpg" alt="">
-                        </div>
-
-                        <div class="card-body">
-                            <div class="card-link">
-                                <a href="#">
-                                    Celebration Cake
-                                </a>
-                            </div>
-
-                            <div class="card-price">
-                                <p>
-                                    $369.00
-                                </p>
-                            </div>
-
-                            <div class="add-to-cart">
-                                <input type="hidden" name="id">
-                                <a href="" class="btn">
-                                    Add To Cart
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
+        
 
             </div>
         </div>
@@ -596,7 +577,7 @@
 
                 </div>
             </div>
-            <div class="form-auth">
+            <div class="form-container">
 
                 <form action="" method="post">
                     <div style="display: none;">
@@ -820,5 +801,4 @@
     <script src="./js//swiper.min.js"></script>
     <script src="./js/index.js"></script>
 </body>
-
 </html>
