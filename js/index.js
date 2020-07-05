@@ -53,6 +53,8 @@ window.addEventListener('load', () => {
 function initArrow(pos) {
     const arrow = document.querySelector('.back-to-top');
 
+    if (!arrow) return;
+
     if (pos >= 300) arrow.classList.remove('hide')
 
     window.addEventListener('scroll', e => {
@@ -94,3 +96,14 @@ function sideBar() {
         })
     }
 }
+
+// Order Modal 
+(() => {
+    const modalBtn = document.querySelector('.proceed-btn');
+    const closeBtn = document.querySelector('.cross');
+    const model = document.querySelector('.product-item-form');
+
+    if (modalBtn) modalBtn.addEventListener('click', (e) => model.classList.add('active'))
+    if (closeBtn) closeBtn.addEventListener('click', (e) => model.classList.remove('active'))
+
+})()

@@ -24,7 +24,6 @@ session_start();
 </head>
 
 <body>
-
 <div class="sidebar">
         <div class="links">
             <ul class="nav-ul">
@@ -52,7 +51,6 @@ session_start();
         </div>
     </div>
 
-    
     <!-- HEADER -->
     <header id="header">
         <nav class="navbar">
@@ -84,6 +82,10 @@ session_start();
                             </a>
                         </div>
                     </div>
+
+                 
+
+
 
                               <!-- After login -->
 

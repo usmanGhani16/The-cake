@@ -1220,6 +1220,7 @@ header .swiper-container:hover .swiper-button-next {
 
 .viewbag {
   padding: 100px 0 100px 0;
+  position: relative;
 }
 
 .viewbag .container {
@@ -1460,6 +1461,106 @@ header .swiper-container:hover .swiper-button-next {
   -webkit-box-shadow: 0 6px 15px 0 rgba(36, 36, 38, 0.15);
           box-shadow: 0 6px 15px 0 rgba(36, 36, 38, 0.15);
   color: #fff;
+}
+
+.viewbag .cart-form .product-item-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 60px 15px;
+  border: 1px solid #ddd;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  display: none;
+  z-index: 9999;
+}
+
+.viewbag .cart-form .product-item-form.active {
+  display: block;
+}
+
+.viewbag .cart-form .product-item-form .close-btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+
+.viewbag .cart-form .product-item-form .close-btn button {
+  background: transparent;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  cursor: pointer;
+}
+
+.viewbag .cart-form .product-item-form .close-btn button svg {
+  font-size: 18px;
+}
+
+.viewbag .cart-form .product-item-form .form-box .row {
+  margin-bottom: 15px !important;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.viewbag .cart-form .product-item-form .form-box .row input {
+  width: 100%;
+  padding-left: 10px;
+  margin-bottom: 5px !important;
+  margin-top: 0;
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 14px;
+  color: #696969;
+  height: 42px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: 0;
+  border: 1px solid #e1e1e1;
+  border-radius: 0px;
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  display: block;
+}
+
+.viewbag .cart-form .product-item-form .form-box .row textarea {
+  width: 100%;
+  padding: 12px !important;
+  height: auto;
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 14px;
+  display: block;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: 0;
+  border: 1px solid #e1e1e1;
+  border-radius: 0px;
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.viewbag .cart-form .product-item-form .form-box .row .btn {
+  color: #ffff;
+  border-color: #fdb822;
+  background-color: #fdb822;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 25px;
+  -webkit-transition: all 0.3s ease-in-out !important;
+  transition: all 0.3s ease-in-out !important;
+  cursor: pointer;
+}
+
+.viewbag .cart-form .product-item-form .form-box .row .btn:hover {
+  color: #fdb822;
+  background-color: transparent;
 }
 
 .back-to-top {
