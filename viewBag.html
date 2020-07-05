@@ -1,12 +1,3 @@
-<?php
-
-include 'config.php';
-session_start();
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,8 +15,7 @@ session_start();
 </head>
 
 <body>
-
-<div class="sidebar">
+    <div class="sidebar">
         <div class="links">
             <ul class="nav-ul">
                 <li class="nav-item">
@@ -51,8 +41,6 @@ session_start();
             </ul>
         </div>
     </div>
-
-    
     <!-- HEADER -->
     <header id="header">
         <nav class="navbar">
@@ -85,65 +73,22 @@ session_start();
                         </div>
                     </div>
 
-                              <!-- After login -->
-
-                           <?php
-                           if(isset($_SESSION['loggedin'])){
-                           ?>
-                        <div class="icons">
+                    <!-- icons -->
+                    <div class="icons">
                         <div class="burger">
-                            <a href="#">
+                            <a href="#" class="sidebar-toggle">
                                 <span>
                                     <i class="fas fa-bars"></i>
                                 </span>
                             </a>
                         </div>
-                        <div class=" bucket" style="margin-left:5px;">
-                            <a href="#">
+                        <div class="auth">
+                            <a href="auth.html">
                                 <span>
                                     <i class="far fa-user"></i>
-                                    <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b></p>                                                  
                                 </span>
                             </a>
-                       
-
-                            <!-- Buckit -->
-                            <div class="bucket-dropdown">
-                                <div class="buckit-items">
-                                    <!-- List items -->
-                                    <ul class="buckit-items-list">
-
-                                    <li class="list-item">
-                                            <div class="item-name">
-                                                <a href="#">
-                                                    <p>  <i class="far fa-user"></i>
-                                                  Hi,  <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b></p>                                                  
-                                                </a>
-                                            </div>                                            
-                                        </li>
-
-                                        <li class="list-item">
-                                            <div class="item-name">
-                                                <a href="reset_password.php">
-                                                    <p>Reset Password</p>                                                  
-                                                </a>
-                                            </div>                                            
-                                        </li>
-
-                                        <li class="list-item">                                        
-                                            <div class="item-name">
-                                                <a href="logout.php">
-                                                    <p>Logout</p>                                                  
-                                                </a>
-                                            </div>                                            
-                                        </li>
-
-                                    </ul>                                   
-                                </div>
-                            </div>
-                            </div>
-
-
+                        </div>
                         <div class="bucket">
                             <a href="#">
                                 <span>
@@ -236,414 +181,135 @@ session_start();
 
                         </div>
                     </div>
-                           <?php
-                           }else{
-                            ?>
-                          <div class="icons">
-                          <div class="burger">
-                            <a href="#">
-                                <span>
-                                    <i class="fas fa-bars"></i>
-                                </span>
-                            </a>
-                        </div>
-                          <div class="auth">
-                            <a href="login_form.php">
-                                <span>
-                                    <i class="far fa-user"></i>
-                                    Login
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                           <?php
-                           }
-                           ?>
-                                <!-- End -->
-
-
-                    <!-- icons -->
-                    
                 </div>
             </div>
         </nav>
-        <!-- Slider main container -->
-        <div class="swiper-container">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide">
-                    <img src="./assets/caroulses/cake-1_2000x.jpg" alt="Slide 1">
-                    <div class="slider-heading-right">
-                        <h5>
-                            Fresh Cakes 1
-                        </h5>
-                        <h2>
-                            EXCLUSIVE OFFERS
-                        </h2>
-                        <h4>
-                            <span>50</span>% OFF
-                        </h4>
-                        <a href="#">
-                            Shop Now
-                        </a>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="./assets/caroulses/cake-2_2000x.jpg" alt="Slide 2">
-                    <div class="slider-heading-left">
-                        <h5>
-                            Fresh Cakes 1
-                        </h5>
-                        <h2>
-                            EXCLUSIVE OFFERS
-                        </h2>
-                        <h4>
-                            <span>50</span>% OFF
-                        </h4>
-                        <a href="#">
-                            Shop Now
-                        </a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide">
-                    <img src="./assets/caroulses/cake-3_2000x.jpg" alt="Slide 3">
-                    <div class="slider-heading-left">
-                        <h5>
-                            Fresh Cakes 1
-                        </h5>
-                        <h2>
-                            EXCLUSIVE OFFERS
-                        </h2>
-                        <h4>
-                            <span>50</span>% OFF
-                        </h4>
-                        <a href="#">
-                            Shop Now
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev">
-                <i class="far fa-arrow-alt-circle-left"></i>
-            </div>
-            <div class="swiper-button-next">
-                <i class="far fa-arrow-alt-circle-right"></i>
-            </div>
-        </div>
     </header>
 
-    <!-- Best selling Products  -->
-    <section id="bestSellingProducts" class="Best-Selling-Products">
-        <div class="box">
-            <div class="heading">
-                <h5> For Any Party</h5>
-                <h2>Best selling Products</h2>
-            </div>
 
-            <!-- <div class="product-container">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-top">
-                            <span class="on-hover">
-                                <img src="./assets//BestCakes/product32_grande.jpg" alt="">
-                            </span>
-                            <img class="display-img" src="./assets/BestCakes/p6_grande.jpg" alt="">
-                        </div>
-
-                        <div class="card-body">
-                            <div class="card-link">
-                                <a href="#">
-                                    Celebration Cake
-                                </a>
-                            </div>
-
-                            <div class="card-price">
-                                <p>
-                                    $369.00
-                                </p>
-                            </div>
-
-                            <div class="add-to-cart">
-                                <input type="hidden" name="id">
-                             
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-top">
-                            <span class="on-hover">
-                                <img src="./assets//BestCakes/product32_grande.jpg" alt="">
-                            </span>
-                            <img class="display-img" src="./assets/BestCakes/p6_grande.jpg" alt="">
-                        </div>
-
-                        <div class="card-body">
-                            <div class="card-link">
-                                <a href="#">
-                                    Celebration Cake
-                                </a>
-                            </div>
-
-                            <div class="card-price">
-                                <p>
-                                    $369.00
-                                </p>
-                            </div>
-
-                            <div class="add-to-cart">
-                                <input type="hidden" name="id">
-                                <a href="" class="btn">
-                                    Add To Cart
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-top">
-                            <span class="on-hover">
-                                <img src="./assets//BestCakes/product32_grande.jpg" alt="">
-                            </span>
-                            <img class="display-img" src="./assets/BestCakes/p6_grande.jpg" alt="">
-                        </div>
-
-                        <div class="card-body">
-                            <div class="card-link">
-                                <a href="#">
-                                    Celebration Cake
-                                </a>
-                            </div>
-
-                            <div class="card-price">
-                                <p>
-                                    $369.00
-                                </p>
-                            </div>
-
-                            <div class="add-to-cart">
-                                <input type="hidden" name="id">
-                                <a href="" class="btn">
-                                    Add To Cart
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-top">
-                            <span class="on-hover">
-                                <img src="./assets//BestCakes/product32_grande.jpg" alt="">
-                            </span>
-                            <img class="display-img" src="./assets/BestCakes/p6_grande.jpg" alt="">
-                        </div>
-
-                        <div class="card-body">
-                            <div class="card-link">
-                                <a href="#">
-                                    Celebration Cake
-                                </a>
-                            </div>
-
-                            <div class="card-price">
-                                <p>
-                                    $369.00
-                                </p>
-                            </div>
-
-                            <div class="add-to-cart">
-                                <input type="hidden" name="id">
-                                <a href="" class="btn">
-                                    Add To Cart
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-    </section>
-
-    <!-- NEW PRODUCTS  -->
-    <section id="NEWPRODUCTS" class="new_products">
-        <div class="box">
-            <!-- <div class="heading">
-                <h3>NEW PRODUCTS</h3>
-            </div> -->
-            <div class="tm-table">
-                <div class="line table-cell"></div>
-                <img class="table-cell"
-                    src="https://z6z7q2p8.stackpathcdn.com/wp-content/themes/cakeart//images/cupcake.png" alt="cupcake"
-                    title="Heading image">
-                <div class="line table-cell"></div>
-            </div>
-
-            <div class="product-container">
-
-            <?php 
-$sql = 'select * from product';
-
-$result = $link->query($sql);
-
-
-        while ($row = $result->fetch_array()) 
-{
-	?>
-
-                <div class="col">
-                    <div class="card">
-                        <div class="card-top">
-                            <img src="./AdminPanel/<?php echo $row[1] ?>" alt="">
-                        </div>
-
-                        <div class="card-body">
-                            <div class="card-link">
-                                <a href="#">
-                                <?php echo $row[2]; ?>
-                                </a>
-                            </div>
-
-                            <div class="card-price">
-                                <p>
-                                <?php echo $row[3]; ?>
-                                </p>
-                            </div>
-                            <div class="add-to-cart">
-                            <input type="hidden" name="id">
-                                <a href="" class="btn">
-                                    Add to cart
-                                </a>                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <?php } ?>
-        
-
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us -->
-    <section id="about-us" class="about-us">
+    <section id="viewBag" class="viewbag">
         <div class="container">
+            <form class="cart-form" action="" method="post">
 
-            <div class="col-md-6">
-                <div class="vu_c-wrapper">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="product-name">All Products</th>
+                                <th class="product-price">Price</th>
+                                <th class="product-quantity">Quantity</th>
+                                <th class="product-subtotal">Total</th>
+                                <th class="product-remove"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                    <div class="vc_align_left">
-                        <figure class="wpb_wrapper">
-                            <div class="vc_single_image-wrapper   vc_box_border_grey"><img
-                                    src="http://preview.milingona.co/themes/bakery/main/wp-content/uploads/2017/10/cup-and-logo.png"
-                                    class="vc_single_image-img attachment-full" alt=""
-                                    srcset="http://preview.milingona.co/themes/bakery/main/wp-content/uploads/2017/10/cup-and-logo.png 658w, http://preview.milingona.co/themes/bakery/main/wp-content/uploads/2017/10/cup-and-logo-300x226.png 300w">
-                            </div>
-                        </figure>
-                        <div class="img-overlay">
-                            <img src="./assets/Free_Sample_By_Wix.jpg" alt="logo">
+                            <tr class="woocommerce-cart-form__cart-item cart_item">
+
+                                <td>
+                                    <div class="ps-product--cart">
+                                        <img width="100" height="107"
+                                            src="http://warethemes.com/wordpress/bakery/wp-content/uploads/2013/06/img-cake-6-100x107.jpg"
+                                            class="attachment-noubakery_100x107 size-noubakery_100x107" alt=""><a
+                                            href="http://warethemes.com/wordpress/bakery/product/sweet-cakes/">Sweet
+                                            Cakes</a>
+                                    </div>
+                                </td>
+
+                                <td class="product-price" data-title="Price">
+                                    <span class="woocs_special_price_code"><span
+                                            class="woocommerce-Price-amount amount"><span
+                                                class="woocommerce-Price-currencySymbol">$</span>59.00</span></span>
+                                </td>
+
+                                <td class="product-quantity" data-title="Quantity">
+                                    <div class="form-group--number quantity">
+                                        <button type="button" class="minus"><span>-</span></button>
+                                        <input type="number" step="1" min="1" max="27"
+                                            name="cart[84d9ee44e457ddef7f2c4f25dc8fa865][qty]" value="1"
+                                            class="form-control input-text qty text" size="4">
+                                        <button type="button" class="plus"><span>+</span></button>
+                                    </div>
+                                </td>
+
+                                <td data-title="Subtotal">
+                                    <span class="total-row">
+                                        <span class="woocs_special_price_code"><span
+                                                class="woocommerce-Price-amount amount"><span
+                                                    class="woocommerce-Price-currencySymbol">$</span>59.00</span></span>
+                                    </span>
+                                </td>
+
+                                <td data-title="Remove">
+                                    <a class="ps-cart-listing__remove"
+                                        href="http://warethemes.com/wordpress/bakery/cart/?remove_item=84d9ee44e457ddef7f2c4f25dc8fa865&amp;_wpnonce=0be586356b"></a>
+                                </td>
+
+                            </tr>
+                            <tr class="woocommerce-cart-form__cart-item cart_item">
+
+                                <td>
+                                    <div class="ps-product--cart">
+                                        <img width="100" height="107"
+                                            src="http://warethemes.com/wordpress/bakery/wp-content/uploads/2017/06/img-cake-11-100x107.jpg"
+                                            class="attachment-noubakery_100x107 size-noubakery_100x107" alt=""><a
+                                            href="http://warethemes.com/wordpress/bakery/product/cherry-coke/">Cherry
+                                            Coke</a> </div>
+                                </td>
+
+                                <td class="product-price" data-title="Price">
+                                    <span class="woocs_special_price_code"><span
+                                            class="woocommerce-Price-amount amount"><span
+                                                class="woocommerce-Price-currencySymbol">$</span>35.00</span></span>
+                                </td>
+
+                                <td class="product-quantity" data-title="Quantity">
+                                    <div class="form-group--number quantity">
+                                        <button type="button" class="minus"><span>-</span></button>
+                                        <input type="number" step="1" min="1"
+                                            name="cart[4c5bde74a8f110656874902f07378009][qty]" value="1"
+                                            class="form-control input-text qty text" size="4">
+                                        <button type="button" class="plus"><span>+</span></button>
+                                    </div>
+                                </td>
+
+                                <td data-title="Subtotal">
+                                    <span class="total-row">
+                                        <span class="woocs_special_price_code"><span
+                                                class="woocommerce-Price-amount amount"><span
+                                                    class="woocommerce-Price-currencySymbol">$</span>35.00</span></span>
+                                    </span>
+                                </td>
+
+                                <td data-title="Remove">
+                                    <a class="ps-cart-listing__remove"
+                                        href="http://warethemes.com/wordpress/bakery/cart/?remove_item=4c5bde74a8f110656874902f07378009&amp;_wpnonce=0be586356b"></a>
+                                </td>
+
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="item-submit">
+                    <div class="col-6">
+                        <div class="total">
+                            <p>Subtotal</p>
+                            <p class="price">3.00 Rs</p>
+                        </div>
+                        <div class="proceed-to-checkout">
+                            <a href="#" class="proceed-btn">
+                                Proceed to checkout</a>
                         </div>
                     </div>
                 </div>
-            </div>
 
-
-            <div class="col-md-6">
-                <div class="vu_c-wrapper">
-                    <div class="vc_align_right">
-                        <div class="wpb_wrapper">
-                            <h4 class="m-t-0 m-b-20">OUR BUSINESS</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                officia deserunt mollit anim id est laborum.</p>
-
-                        </div>
-                        <div class="wpb_wrapper">
-                            <h4 class="m-t-0 m-b-20">WHO WE ARE</h4>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                                ea
-                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum
-                                dolore eu fugiat nulla pariatur.</p>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Contact Us -->
-    <section id="contact-us" class="contact-us">
-        <div id="map"></div>
-        <div class="contact-form">
-            <div class="form-heading">
-                <div class="wpb_wrapper">
-                    <h3>
-                        <span>CONTACT US</span>
-                    </h3>
-                    <p>
-                        <span>Meet the creative team that
-                            never sleeps. Say something to us we will answer to you.</span>
-                    </p>
+                <div class="product-item-form">
 
                 </div>
-            </div>
-            <div class="form-container">
-
-                <form action="" method="post">
-                    <div style="display: none;">
-                        <input type="hidden" name="" value="526">
-                        <input type="hidden" name="" value="4.9.2">
-                        <input type="hidden" name="" value="en_US">
-                        <input type="hidden" name="" value="wpcf7-f526-p87-o1">
-                        <input type="hidden" name="" value="87">
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-12 m-b-15">
-                            <input type="text" name="your-name" value="" placeholder="Name">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 m-b-15">
-                            <input type="tel" name="phone" value="" placeholder="Phone">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 m-b-15">
-                            <input type="email" name="email" value="" placeholder="Email">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 m-b-15">
-                            <textarea name="message" cols="40" rows="6" aria-required="true" aria-invalid="false"
-                                placeholder="Message"></textarea></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <input type="submit" value="SEND" class="btn" />
-                        </div>
-                    </div>
-                    <div class="wpcf7-response-output wpcf7-display-none"></div>
-                </form>
-
-            </div>
-
+            </form>
         </div>
     </section>
 
@@ -813,11 +479,6 @@ $result = $link->query($sql);
         </div>
     </footer>
 
-
-    <a class="back-to-top hide" href="#header">
-        <i class="fas fa-angle-double-up"></i>
-    </a>
-
     <!-- Scripts -->
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMR0VubGQmvqaWticCn-eAMoaXudxJ9Uc&callback=initMap">
@@ -826,4 +487,5 @@ $result = $link->query($sql);
     <script src="./js//swiper.min.js"></script>
     <script src="./js/index.js"></script>
 </body>
+
 </html>

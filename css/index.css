@@ -1218,6 +1218,250 @@ header .swiper-container:hover .swiper-button-next {
   font-size: 14px;
 }
 
+.viewbag {
+  padding: 100px 0 100px 0;
+}
+
+.viewbag .container {
+  margin: 0 60px 0 60px;
+  padding: 0 30px 0 30px;
+}
+
+.viewbag .cart-form .table-responsive {
+  min-height: .01%;
+  overflow-x: auto;
+}
+
+.viewbag .cart-form .table-responsive::-webkit-scrollbar {
+  height: 10px;
+}
+
+.viewbag .cart-form .table-responsive::-webkit-scrollbar-track {
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.viewbag .cart-form .table-responsive::-webkit-scrollbar-thumb {
+  background-color: #ee7560;
+  border-radius: 10px;
+}
+
+.viewbag .cart-form .table-responsive .table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.viewbag .cart-form .table-responsive .table thead tr th {
+  font-family: "Libre Baskerville", serif;
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  color: #515356;
+  text-transform: uppercase;
+}
+
+.viewbag .cart-form .table-responsive .table tbody tr td {
+  text-align: center;
+  vertical-align: middle;
+  min-width: 250px;
+  padding: 8px;
+  line-height: 1.42857143;
+  border-top: 1px solid #ddd;
+}
+
+.viewbag .cart-form .table-responsive .table tbody tr td:first-child {
+  min-width: 350px;
+}
+
+.viewbag .cart-form .table-responsive .table tbody tr td:last-child {
+  min-width: 100px;
+}
+
+.viewbag .cart-form .table-responsive .table tbody tr td .ps-product--cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.viewbag .cart-form .table-responsive .table tbody tr td .ps-product--cart a {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-left: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+  color: #515356;
+  text-transform: uppercase;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.viewbag .cart-form .table-responsive .table tbody tr td .ps-product--cart a:hover {
+  color: #ee7560;
+}
+
+.viewbag .cart-form .table-responsive .table tbody tr td .form-group--number {
+  display: inline-block;
+}
+
+.viewbag .cart-form .table-responsive .table tbody tr td .form-group--number input {
+  position: relative;
+  top: -2px;
+  margin-right: -4px;
+  margin-left: -4px;
+  display: inline-block;
+  width: 130px;
+  height: 40px;
+  text-align: center;
+  border-radius: 0;
+  padding: 0 20px;
+  background-color: #f1f1f1;
+  font-family: "Varela Round", sans-serif;
+  font-size: 14px;
+  border-color: #f1f1f1;
+  opacity: 1;
+  border-radius: 4px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #555;
+  background-image: none;
+  border: 1px solid #ccc;
+}
+
+.viewbag .cart-form .table-responsive .table tbody tr td .form-group--number button {
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-size: 20px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.viewbag .cart-form .table-responsive .table tbody tr td .form-group--number button.minus {
+  border-radius: 40px 0 0 40px;
+}
+
+.viewbag .cart-form .table-responsive .table tbody tr td .form-group--number button.plus {
+  border-radius: 0 40px 40px 0;
+}
+
+.viewbag .cart-form .table-responsive .table tbody tr td .form-group--number button span {
+  color: #fff;
+  font-size: 20px;
+}
+
+.viewbag .cart-form .table-responsive .table tbody tr td .form-group--number button:focus {
+  border: none;
+  outline: none;
+}
+
+.viewbag .cart-form .table-responsive .table tbody tr td .ps-cart-listing__remove {
+  position: relative;
+  display: block;
+  background-color: #f1f1f1;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  font-family: inherit;
+}
+
+.viewbag .cart-form .table-responsive .table tbody tr td .ps-cart-listing__remove::before {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 2px;
+  background-color: #b1b1b1;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.viewbag .cart-form .table-responsive .table tbody tr td .ps-cart-listing__remove::after {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 2px;
+  background-color: #b1b1b1;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.viewbag .cart-form .table-responsive .table tbody tr td .ps-cart-listing__remove:hover {
+  background-color: #ee7560;
+  outline-width: 0;
+}
+
+.viewbag .cart-form .item-submit {
+  border-top: solid 1px #f1f1f1;
+  padding-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.viewbag .cart-form .item-submit .total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0 10px 0;
+}
+
+.viewbag .cart-form .item-submit .total .price {
+  padding-left: 10px;
+}
+
+.viewbag .cart-form .item-submit .proceed-to-checkout {
+  margin-top: 20px;
+}
+
+.viewbag .cart-form .item-submit .proceed-to-checkout a {
+  display: inline-block;
+  padding: 11px 40px 9px;
+  border: none;
+  font-size: 14px;
+  line-height: 25px;
+  border-radius: 50px;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  background-color: #ee7560;
+  background-image: -webkit-gradient(linear, left top, right top, from(#ee7560), to(#ff5858));
+  background-image: linear-gradient(90deg, #ee7560, #ff5858);
+}
+
+.viewbag .cart-form .item-submit .proceed-to-checkout a:hover {
+  -webkit-box-shadow: 0 6px 15px 0 rgba(36, 36, 38, 0.15);
+          box-shadow: 0 6px 15px 0 rgba(36, 36, 38, 0.15);
+  color: #fff;
+}
+
 .back-to-top {
   background: rgba(228, 114, 119, 0.8);
   bottom: 15px;
@@ -1255,8 +1499,6 @@ header .swiper-container:hover .swiper-button-next {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 90vh;
-  min-height: 500px;
 }
 
 .form-container .auth {
@@ -1516,6 +1758,32 @@ header .swiper-container:hover .swiper-button-next {
     width: 100%;
     position: static;
     background-color: rgba(104, 79, 64, 0.9) !important;
+  }
+  .viewbag .container {
+    margin: 0;
+  }
+  .viewbag .container .table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #ddd;
+  }
+  .viewbag .container .table-responsive .table thead tr th {
+    padding: 8px;
+  }
+  .viewbag .container .table-responsive .table thead tr th:first-child {
+    text-align: left;
+  }
+  .viewbag .container .item-submit {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .viewbag .container .item-submit .total {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .site-footer .box {
     width: 100%;
