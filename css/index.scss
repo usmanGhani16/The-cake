@@ -106,6 +106,47 @@ a {
     }
 }
 
+.main-sidebar {
+    background: $hoverIcon !important;
+
+    .brand-link {
+        display: flex;
+
+        .brand-image {
+            max-height: 70px;
+        }
+
+        .brand-text {
+            display: block;
+            align-self: center;
+            color: $white;
+            font-size: 20px;
+            font-family: $font_family;
+        }
+    }
+
+    .links {
+        .nav-ul {
+            .nav-item {
+                padding: 1rem 1rem 1rem 1rem;
+                border-bottom: 2px solid $white;
+
+
+                .nav-link {
+                    display: flex;
+                    color: $white;
+
+                    svg {
+                        display: block;
+                        align-self: center;
+                        margin-right: 14px;
+                    }
+
+                }
+            }
+        }
+    }
+}
 
 //  STYLES // 
 header {

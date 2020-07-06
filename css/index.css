@@ -100,6 +100,50 @@ a {
           transform: translateX(0rem);
 }
 
+.main-sidebar {
+  background: #ff599a !important;
+}
+
+.main-sidebar .brand-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-sidebar .brand-link .brand-image {
+  max-height: 70px;
+}
+
+.main-sidebar .brand-link .brand-text {
+  display: block;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.main-sidebar .links .nav-ul .nav-item {
+  padding: 1rem 1rem 1rem 1rem;
+  border-bottom: 2px solid #ffffff;
+}
+
+.main-sidebar .links .nav-ul .nav-item .nav-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #ffffff;
+}
+
+.main-sidebar .links .nav-ul .nav-item .nav-link svg {
+  display: block;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-right: 14px;
+}
+
 header {
   background-color: #ffffff;
 }
