@@ -813,10 +813,9 @@ header {
             margin-top: 18px;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
 
             .col {
-                width: 293px;
+                width: 25%;
 
                 .card {
                     border: 1px solid #dddddd;
@@ -1649,6 +1648,112 @@ header {
                 }
             }
         }
+    }
+}
+
+
+// Products by event //
+
+.events {
+
+    .box {
+        .heading {
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 0;
+            line-height: 100%;
+            height: 250px;
+            max-height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h3 {
+                font-family: $font_family2;
+                font-size: 50px;
+                color: #fdb822;
+            }
+        }
+
+        .product-container {
+            margin-top: 18px;
+            display: flex;
+            flex-wrap: wrap;
+
+            .col {
+                width: 20%;
+
+                .card {
+                    border: 1px solid #dddddd;
+                    text-align: center;
+                    margin: 15px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    -ms-border-radius: 5px;
+                    -o-border-radius: 5px;
+                    border-radius: 5px;
+                    font-family: Roboto Slab;
+
+                    .card-top {
+                        border-radius: 5px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .card-body {
+                        .card-link {
+                            display: block;
+                            color: #5e3c3e;
+                            margin-top: 20px;
+                            margin-bottom: 15px;
+                            padding: 0 30px;
+                            font-size: 16px;
+                        }
+
+                        .card-price {
+                            margin-bottom: 25px;
+
+                            p {
+                                color: #e47277;
+                                font-weight: 700;
+                                font-size: 16px;
+                            }
+                        }
+
+                        .add-to-cart {
+                            a {
+                                position: relative;
+                                background: #ffffff;
+                                color: #e47277;
+                                font-size: 12px;
+                                text-transform: uppercase;
+                                padding: 13px 20px;
+                                -webkit-border-radius: 5px;
+                                -moz-border-radius: 5px;
+                                -ms-border-radius: 5px;
+                                -o-border-radius: 5px;
+                                border-radius: 5px;
+                                border: 1px solid #dddddd;
+                                font-weight: 700;
+                                transition: $trans;
+                            }
+
+                            &:hover {
+                                a {
+                                    border-color: #e47277;
+                                    background: #e47277;
+                                    color: #ffffff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
 
